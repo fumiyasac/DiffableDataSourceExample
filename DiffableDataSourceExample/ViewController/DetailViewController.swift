@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  DetailViewController.swift
 //  DiffableDataSourceExample
 //
 //  Created by 酒井文也 on 2019/11/26.
@@ -8,13 +8,9 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+final class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
 }
-

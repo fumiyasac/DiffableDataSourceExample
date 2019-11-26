@@ -2,18 +2,12 @@
 # platform :ios, '9.0'
 
 target 'DiffableDataSourceExample' do
-  # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
   # Pods for DiffableDataSourceExample
-
-  target 'DiffableDataSourceExampleTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'DiffableDataSourceExampleUITests' do
-    # Pods for testing
-  end
-
+  pod 'AlamofireImage'
+  pod 'PTCardTabBar'
+  pod 'Loaf'
+  pod 'Nantes'
+  pod 'PanModal'
 end

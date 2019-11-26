@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y0C-wV-hhb">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Card Tab Bar Controller-->
+        <scene sceneID="Wza-5F-ohG">
+            <objects>
+                <tabBarController id="Y0C-wV-hhb" customClass="PTCardTabBarController" customModule="PTCardTabBar" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Drj-MN-TDF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                            <color key="value" red="0.86666666670000003" green="0.46666666670000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="LYm-Ea-ZtW" kind="relationship" relationship="viewControllers" id="QjO-kR-0pZ"/>
+                        <segue destination="CNo-4T-8Wc" kind="relationship" relationship="viewControllers" id="jmL-tp-h0j"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kad-uR-XUE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2143" y="-739"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="isN-B6-k7N">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="LYm-Ea-ZtW" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="photo.fill.on.rectangle.fill" catalog="system" id="SQ2-Ha-pXB"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6SA-41-jgT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1654" y="-841"/>
+        </scene>
+        <!--Article-->
+        <scene sceneID="guM-Cq-taM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Article" id="CNo-4T-8Wc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="book.fill" catalog="system" id="iYJ-K9-PzB"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I69-KX-hvc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1646" y="-641"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="book.fill" catalog="system" width="64" height="50"/>
+        <image name="photo.fill.on.rectangle.fill" catalog="system" width="64" height="48"/>
+    </resources>
+</document>
