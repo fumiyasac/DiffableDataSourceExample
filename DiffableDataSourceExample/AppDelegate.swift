@@ -15,6 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // → Info.plist内で「User Interface Style」を「Light」に設定する
     // (参考) https://stackoverflow.com/questions/56537855/is-it-possible-to-opt-out-of-dark-mode-on-ios-13
 
+    // MEMO: GlobalTabBar.storyboardはコードを利用しないでInterfaceBuilderと「ライブラリ: PTCardTabBar」で実装しています
+    // → Info.plist内で「User Interface Style」を「Light」に設定する
+    // (参考1) https://teratail.com/questions/214822
+    // (参考2) https://qiita.com/omochimetaru/items/31df103ef98a9d84ae6b
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true

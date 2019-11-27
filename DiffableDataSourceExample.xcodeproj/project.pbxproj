@@ -15,6 +15,11 @@
 		DE623AB8238D6F3D0049BF21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE623AB6238D6F3D0049BF21 /* LaunchScreen.storyboard */; };
 		DE623AC3238D6F3D0049BF21 /* DiffableDataSourceExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE623AC2238D6F3D0049BF21 /* DiffableDataSourceExampleTests.swift */; };
 		DE623ACE238D6F3D0049BF21 /* DiffableDataSourceExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE623ACD238D6F3D0049BF21 /* DiffableDataSourceExampleUITests.swift */; };
+		DE695C7B238EC21E00A13CD4 /* APIRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE695C7A238EC21E00A13CD4 /* APIRequestManager.swift */; };
+		DE695C7E238EEA5100A13CD4 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE695C7C238EEA5100A13CD4 /* ArticleTableViewCell.swift */; };
+		DE695C7F238EEA5100A13CD4 /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE695C7D238EEA5100A13CD4 /* ArticleTableViewCell.xib */; };
+		DE695C82238F43B500A13CD4 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE695C80238F43B500A13CD4 /* MainCollectionViewCell.swift */; };
+		DE695C83238F43B500A13CD4 /* MainCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE695C81238F43B500A13CD4 /* MainCollectionViewCell.xib */; };
 		DED6F1E3238D73FC00A0168E /* GlobalTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DED6F1E1238D73FC00A0168E /* GlobalTabBar.storyboard */; };
 		DED6F1E6238D743600A0168E /* Article.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DED6F1E4238D743600A0168E /* Article.storyboard */; };
 		DED6F1E9238D748500A0168E /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED6F1E8238D748500A0168E /* ArticleViewController.swift */; };
@@ -64,6 +69,11 @@
 		DE623AC9238D6F3D0049BF21 /* DiffableDataSourceExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiffableDataSourceExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE623ACD238D6F3D0049BF21 /* DiffableDataSourceExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffableDataSourceExampleUITests.swift; sourceTree = "<group>"; };
 		DE623ACF238D6F3D0049BF21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE695C7A238EC21E00A13CD4 /* APIRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestManager.swift; sourceTree = "<group>"; };
+		DE695C7C238EEA5100A13CD4 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
+		DE695C7D238EEA5100A13CD4 /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
+		DE695C80238F43B500A13CD4 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
+		DE695C81238F43B500A13CD4 /* MainCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCollectionViewCell.xib; sourceTree = "<group>"; };
 		DED6F1E2238D73FC00A0168E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/GlobalTabBar.storyboard; sourceTree = "<group>"; };
 		DED6F1E5238D743600A0168E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Article.storyboard; sourceTree = "<group>"; };
 		DED6F1E8238D748500A0168E /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +191,24 @@
 			path = DiffableDataSourceExampleUITests;
 			sourceTree = "<group>";
 		};
+		DE695C78238EB94000A13CD4 /* ArticleTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				DE695C7C238EEA5100A13CD4 /* ArticleTableViewCell.swift */,
+				DE695C7D238EEA5100A13CD4 /* ArticleTableViewCell.xib */,
+			);
+			path = ArticleTableViewCell;
+			sourceTree = "<group>";
+		};
+		DE695C79238EB95A00A13CD4 /* MainCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				DE695C80238F43B500A13CD4 /* MainCollectionViewCell.swift */,
+				DE695C81238F43B500A13CD4 /* MainCollectionViewCell.xib */,
+			);
+			path = MainCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		DED6F1E0238D716000A0168E /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +240,8 @@
 		DED6F1F2238D756F00A0168E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DE695C79238EB95A00A13CD4 /* MainCollectionViewCell */,
+				DE695C78238EB94000A13CD4 /* ArticleTableViewCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -239,6 +269,7 @@
 		DED6F1F5238D75A500A0168E /* APIRequestManager */ = {
 			isa = PBXGroup;
 			children = (
+				DE695C7A238EC21E00A13CD4 /* APIRequestManager.swift */,
 			);
 			path = APIRequestManager;
 			sourceTree = "<group>";
@@ -375,8 +406,10 @@
 				DE623AB5238D6F3D0049BF21 /* Assets.xcassets in Resources */,
 				DE623AB3238D6F3A0049BF21 /* Main.storyboard in Resources */,
 				DED6F1E6238D743600A0168E /* Article.storyboard in Resources */,
+				DE695C7F238EEA5100A13CD4 /* ArticleTableViewCell.xib in Resources */,
 				DED6F1E3238D73FC00A0168E /* GlobalTabBar.storyboard in Resources */,
 				DED6F1EF238D754F00A0168E /* Detail.storyboard in Resources */,
+				DE695C83238F43B500A13CD4 /* MainCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,11 +476,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE695C7B238EC21E00A13CD4 /* APIRequestManager.swift in Sources */,
+				DE695C7E238EEA5100A13CD4 /* ArticleTableViewCell.swift in Sources */,
 				DE623AB0238D6F3A0049BF21 /* MainViewController.swift in Sources */,
 				DED6F1FA238D7F7500A0168E /* NSObjectProtocolExtension.swift in Sources */,
 				DED6F200238D7FED00A0168E /* UIViewControllerExtension.swift in Sources */,
 				DED6F1FC238D7F9C00A0168E /* UIColorExtension.swift in Sources */,
 				DED6F202238D803D00A0168E /* UITableViewExtension.swift in Sources */,
+				DE695C82238F43B500A13CD4 /* MainCollectionViewCell.swift in Sources */,
 				DED6F1FE238D7FBA00A0168E /* UICollectionViewExtension.swift in Sources */,
 				DED6F1E9238D748500A0168E /* ArticleViewController.swift in Sources */,
 				DED6F1F1238D756500A0168E /* DetailViewController.swift in Sources */,

@@ -14,3 +14,18 @@ final class DetailViewController: UIViewController {
         super.viewDidLoad()
     }
 }
+
+// MARK: - StoryboardInstantiatable
+
+extension DetailViewController: StoryboardInstantiatable {
+
+    // このViewControllerに対応するStoryboard名
+    static var storyboardName: String {
+        return "Detail"
+    }
+
+    // このViewControllerに対応するViewControllerのIdentifier名
+    static var viewControllerIdentifier: String? {
+        return nil
+    }
+}

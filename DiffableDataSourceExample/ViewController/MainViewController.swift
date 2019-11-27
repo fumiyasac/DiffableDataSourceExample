@@ -10,8 +10,17 @@ import UIKit
 
 final class MainViewController: UIViewController {
 
+    // MARK: - @IBOutlets
+
+    @IBOutlet weak private var mainCollectionView: UICollectionView!
+
+    // MARK: - Override
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        setupNavigationBarTitle("Photos")
+        removeBackButtonText()
     }
 }
 
