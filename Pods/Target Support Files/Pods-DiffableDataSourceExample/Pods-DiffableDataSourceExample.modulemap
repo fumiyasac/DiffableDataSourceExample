@@ -1,6 +1,0 @@
-framework module Pods_DiffableDataSourceExample {
-  umbrella header "Pods-DiffableDataSourceExample-umbrella.h"
-
-  export *
-  module * { export * }
-}
