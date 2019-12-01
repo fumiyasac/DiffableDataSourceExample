@@ -19,7 +19,7 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupNavigationBarTitle("Photos")
+        setupNavigationBarTitle("Photos", shouldPrefersLargeTitles: false)
         removeBackButtonText()
     }
 }

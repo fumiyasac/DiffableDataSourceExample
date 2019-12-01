@@ -43,7 +43,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EB7-Qq-Ndx">
                                         <rect key="frame" x="0.0" y="1" width="84" height="18"/>
-                                        <color key="backgroundColor" red="0.8905179794520548" green="0.29382319812191782" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.8905179794520548" green="0.41103745325890412" blue="0.066754066780821922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="P7M-Q4-hhE"/>
                                             <constraint firstAttribute="width" constant="84" id="pcs-ZM-eJV"/>

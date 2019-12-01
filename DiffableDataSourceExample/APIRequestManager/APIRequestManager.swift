@@ -40,8 +40,8 @@ class APIRequestManager {
 
         case photos = "photos"
         case articles = "articles"
-        case detailDescription = "detail_description"
-        case detailComments = "detail_comments"
+        case detail = "detail"
+        case detailDescriptions = "detail_description"
         case detailThumbnails = "detail_thumbnails"
 
         func getBaseUrl() -> String {

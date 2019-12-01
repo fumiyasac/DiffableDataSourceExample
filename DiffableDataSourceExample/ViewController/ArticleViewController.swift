@@ -49,7 +49,7 @@ final class ArticleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupNavigationBarTitle("Articles")
+        setupNavigationBarTitle("Articles", shouldPrefersLargeTitles: false)
         removeBackButtonText()
     }
 
