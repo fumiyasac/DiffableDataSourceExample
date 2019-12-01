@@ -1,5 +1,5 @@
 //
-//  Photo.swift
+//  ArticleList.swift
 //  DiffableDataSourceExample
 //
 //  Created by 酒井文也 on 2019/12/01.

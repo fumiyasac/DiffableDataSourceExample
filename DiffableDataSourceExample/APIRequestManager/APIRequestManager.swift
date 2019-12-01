@@ -17,7 +17,9 @@ enum APIError : Error {
 
 // MARK: - Protocol
 
-protocol APIRequestManagerProtocol {}
+protocol APIRequestManagerProtocol {
+    func getPhotoList(perPage: Int) -> Future<[PhotoList], APIError>
+}
 
 class APIRequestManager {
 
@@ -60,8 +62,46 @@ class APIRequestManager {
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
         return urlRequest
     }
+
+    // MARK: - Private Function
+
+    private func handleSessionTask<T: Decodable & Hashable>(_ dataType: T.Type, request: URLRequest) -> Future<[T], APIError> {
+        return Future { promise in
+
+            let task = self.session.dataTask(with: request) { data, response, error in
+                // MEMO: レスポンス形式やステータスコードを元にしたエラーハンドリングをする
+                if let error = error {
+                    promise(.failure(APIError.error(error.localizedDescription)))
+                    return
+                }
+                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                    promise(.failure(APIError.error("Error: invalid HTTP response code")))
+                    return
+                }
+                guard let data = data else {
+                    promise(.failure(APIError.error("Error: missing response data")))
+                    return
+                }
+                // MEMO: 取得できたレスポンスを引数で指定した型の配列に変換して受け取る
+                do {
+                    let hashableObjects = try JSONDecoder().decode([T].self, from: data)
+                    promise(.success(hashableObjects))
+                } catch {
+                    promise(.failure(APIError.error(error.localizedDescription)))
+                }
+            }
+            task.resume()
+        }
+    }
 }
 
 // MARK: - APIRequestManagerProtocol
 
-extension APIRequestManager: APIRequestManagerProtocol {}
+extension APIRequestManager: APIRequestManagerProtocol {
+
+    func getPhotoList(perPage: Int) -> Future<[PhotoList], APIError> {
+        let endPointUrl = EndPoint.photos.getBaseUrl() + "?page=" + String(perPage)
+        let photoListAPIRequest = makeUrlForGetRequest(endPointUrl)
+        return handleSessionTask(PhotoList.self, request: photoListAPIRequest)
+    }
+}
