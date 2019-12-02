@@ -86,12 +86,15 @@ final class PhotoViewModel: PhotoViewModelType, PhotoViewModelInputs, PhotoViewM
 
     private func fetchPhotoList() {
 
+        // 次のページが存在しない場合は以降の処理を実施しないようにする
         if !hasNextPage {
             return
         }
 
+        // APIとの通信処理ステータスを「実行中」へ切り替える
         _apiRequestStatus = .requesting
 
+        // APIとの通信処理を実行する
         api.getPhotoList(perPage: nextPageNumber)
             .receive(on: RunLoop.main)
             .sink(
@@ -125,47 +128,11 @@ final class PhotoViewModel: PhotoViewModelType, PhotoViewModelInputs, PhotoViewM
                         self.hasNextPage = photoList.hasNextPage
 
                         // MEMO: 表示対象データを差分更新する
-                        self._photos = self.executeDiffableUpdate(to: photoList.photos)
+                        self._photos = UniqueDataArrayBuilder.fillDifferenceOfOldAndNewLists(Photo.self, oldDataList: self._photos, newDataList: photoList.photos)
                         print("receiveValue fetchPhotoList(): \(photoList)")
                     }
                 }
             )
             .store(in: &cancellables)
-    }
-
-    // 差分を更新とモデル内に定義したハッシュ値の衝突を避けるための処理
-    private func executeDiffableUpdate(to receivedPhotos: [Photo]) -> [Photo] {
-
-        // 新旧のデータ配列
-        let oldPhotos = _photos
-        var newPhotos = receivedPhotos
-
-        // 返却用の配列
-        var photos: [Photo] = []
-
-        // 既存の表示データ配列をループさせて同一のものがある場合は新しいデータへ置き換える
-        // ここはもっと綺麗に書ける余地がある部分だと思う...
-        for oldPhoto in oldPhotos {
-            var shouldAppendOldPhoto = true
-            for (newIndex, newPhoto) in newPhotos.enumerated() {
-
-                // 同一データの確認(写真表示用のモデルはHashableとしているのでidの一致で判定できるようにしている部分がポイント)
-                if oldPhoto == newPhoto {
-                    shouldAppendOldPhoto = false
-                    photos.append(newPhoto)
-                    newPhotos.remove(at: newIndex)
-                    break
-                }
-            }
-            if shouldAppendOldPhoto {
-                photos.append(oldPhoto)
-            }
-        }
-
-        // 置き換えたものを除外した新しいデータを後ろへ追加する
-        for newPhoto in newPhotos {
-            photos.append(newPhoto)
-        }
-        return photos
     }
 }
