@@ -11,7 +11,17 @@ import Combine
 
 // MARK: - Enum
 
-enum APIError : Error {
+//
+enum APIRequestStatus {
+    case none
+    case requesting
+    case requestSuccess
+    case requestFailure
+}
+
+//
+enum APIError: Error {
+    case none
     case error(String)
 }
 
