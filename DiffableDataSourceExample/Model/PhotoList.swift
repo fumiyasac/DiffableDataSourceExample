@@ -7,6 +7,9 @@
 //
 
 import Foundation
+import UIKit
+
+// MARK: - Struct (PhotoList)
 
 struct PhotoList: Hashable, Decodable {
 
@@ -49,7 +52,7 @@ struct PhotoList: Hashable, Decodable {
     }
 }
 
-// MARK: - Photo Extension
+// MARK: - Struct (Photo)
 
 struct Photo: Hashable, Decodable {
 
@@ -59,6 +62,40 @@ struct Photo: Hashable, Decodable {
     let image: Image
     let gift: Gift
 
+    private(set) var height: CGFloat = 0.0
+    
+    // MARK: - Enum
+
+    private enum Keys: String, CodingKey {
+        case id
+        case title
+        case summary
+        case image
+        case gift
+    }
+
+    // MARK: - Initializer
+
+    init(from decoder: Decoder) throws {
+
+        // JSONの配列内の要素を取得する
+        let container = try decoder.container(keyedBy: Keys.self)
+
+        // JSONの配列内の要素にある値をDecodeして初期化する
+        self.id = try container.decode(Int.self, forKey: .id)
+        self.title = try container.decode(String.self, forKey: .title)
+        self.summary = try container.decode(String.self, forKey: .summary)
+        self.image = try container.decode(Image.self, forKey: .image)
+        self.gift = try container.decode(Gift.self, forKey: .gift)
+
+        // MEMO: 写真のサイズに基づいて算出した縦横比を利用して適用したセルのサイズを算出する
+        let screenHalfWidth = UIScreen.main.bounds.width * 0.5
+        let ratio = CGFloat(self.image.height) / CGFloat(self.image.width)
+        let titleAndSummaryHeight: CGFloat = 90.0
+
+        self.height = screenHalfWidth * ratio + titleAndSummaryHeight
+    }
+    
     // MARK: - Hashable
 
     // MEMO: Hashableプロトコルに適合させるための処理

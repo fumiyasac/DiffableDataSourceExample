@@ -7,7 +7,4 @@ target 'DiffableDataSourceExample' do
   # Pods for DiffableDataSourceExample
   pod 'AlamofireImage'
   pod 'PTCardTabBar'
-  pod 'Loaf'
-  pod 'Nantes'
-  pod 'PanModal'
 end

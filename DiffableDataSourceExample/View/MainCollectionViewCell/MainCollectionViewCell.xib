@@ -97,6 +97,13 @@
                 <constraint firstAttribute="bottom" secondItem="H9Y-0a-ka6" secondAttribute="bottom" id="rwW-Tt-ruw"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="giftFlagLabel" destination="oQA-cn-DHJ" id="qeR-ds-TNH"/>
+                <outlet property="giftPriceLabel" destination="D6T-oa-UZ8" id="Onq-yZ-oCU"/>
+                <outlet property="photoImageView" destination="uNl-rG-cFC" id="ffE-1e-94l"/>
+                <outlet property="photoSummaryLabel" destination="hNe-Uk-puu" id="uo3-sd-1Ko"/>
+                <outlet property="photoTitleLabel" destination="hWH-GR-Dm1" id="s0s-Ge-dIV"/>
+            </connections>
             <point key="canvasLocation" x="131.8840579710145" y="97.767857142857139"/>
         </collectionViewCell>
     </objects>

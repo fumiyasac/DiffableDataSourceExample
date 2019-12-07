@@ -79,18 +79,3 @@ final class ArticleViewController: UIViewController {
         return section
     }
 }
-
-// MARK: - StoryboardInstantiatable
-
-extension ArticleViewController: StoryboardInstantiatable {
-
-    // このViewControllerに対応するStoryboard名
-    static var storyboardName: String {
-        return "Article"
-    }
-
-    // このViewControllerに対応するViewControllerのIdentifier名
-    static var viewControllerIdentifier: String? {
-        return nil
-    }
-}

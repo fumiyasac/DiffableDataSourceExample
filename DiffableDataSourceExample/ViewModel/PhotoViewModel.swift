@@ -13,6 +13,7 @@ import Combine
 
 protocol PhotoViewModelInputs {
     var fetchPhotoTrigger: PassthroughSubject<Void, Never> { get }
+    var refreshPhotoTrigger: PassthroughSubject<Void, Never> { get }
 }
 
 protocol PhotoViewModelOutputs {
@@ -35,6 +36,7 @@ final class PhotoViewModel: PhotoViewModelType, PhotoViewModelInputs, PhotoViewM
     // MARK: - PhotoViewModelInputs
 
     let fetchPhotoTrigger = PassthroughSubject<Void, Never>()
+    let refreshPhotoTrigger = PassthroughSubject<Void, Never>()
 
     // MARK: - MainViewModelOutputs
 
@@ -65,11 +67,29 @@ final class PhotoViewModel: PhotoViewModelType, PhotoViewModelInputs, PhotoViewM
         // MEMO: 適用するAPIリクエスト用の処理
         self.api = api
 
-        // MEMO: InputTriggerとAPIリクエストをするための処理を結合する
+        // MEMO:
         fetchPhotoTrigger
             .sink(
                 receiveValue: { [weak self] in
                     guard let self = self else { return }
+
+                    // MEMO: 次のページが存在しない場合は以降の処理を実施しないようにする
+                    guard self.hasNextPage else {
+                        return
+                    }
+                    self.fetchPhotoList()
+                }
+            )
+            .store(in: &cancellables)
+
+        // MEMO:
+        refreshPhotoTrigger
+            .sink(
+                receiveValue: { [weak self] in
+                    guard let self = self else { return }
+                    self.nextPageNumber = 1
+                    self.hasNextPage = true
+                    self._photos = []
                     self.fetchPhotoList()
                 }
             )
@@ -85,11 +105,6 @@ final class PhotoViewModel: PhotoViewModelType, PhotoViewModelInputs, PhotoViewM
     // MARK: - Privete Function
 
     private func fetchPhotoList() {
-
-        // 次のページが存在しない場合は以降の処理を実施しないようにする
-        if !hasNextPage {
-            return
-        }
 
         // APIとの通信処理ステータスを「実行中」へ切り替える
         _apiRequestStatus = .requesting
