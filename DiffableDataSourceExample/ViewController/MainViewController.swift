@@ -269,7 +269,7 @@ extension MainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
         // MEMO: 該当のセクションとIndexPathからNSDiffableDataSourceSnapshot内の該当する値を取得する
-        if let targetSection = MainSection(rawValue: indexPath.section) {
+        if let targetSection = PhotoSection(rawValue: indexPath.section) {
             let targetSnapshot = snapshot.itemIdentifiers(inSection: .WaterFallLayout)
             print("Section: ", targetSection)
             print("IndexPath.row: ", indexPath.row)

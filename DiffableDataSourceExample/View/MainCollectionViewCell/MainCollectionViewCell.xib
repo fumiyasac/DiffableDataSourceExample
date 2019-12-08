@@ -48,8 +48,12 @@
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uNl-rG-cFC">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.12156862745098039" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
+                            <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c4Z-Qn-kic">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Present" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQA-cn-DHJ">
                                 <rect key="frame" x="10" y="10" width="84" height="18"/>
                                 <color key="backgroundColor" red="0.8901960784313725" green="0.08486557823698633" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -76,10 +80,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="eiI-fr-9P0" firstAttribute="top" secondItem="uNl-rG-cFC" secondAttribute="bottom" id="2hd-4P-qkH"/>
+                            <constraint firstAttribute="trailing" secondItem="c4Z-Qn-kic" secondAttribute="trailing" id="3vS-oR-jWB"/>
+                            <constraint firstItem="eiI-fr-9P0" firstAttribute="top" secondItem="c4Z-Qn-kic" secondAttribute="bottom" id="8ZN-ia-AIf"/>
+                            <constraint firstItem="eiI-fr-9P0" firstAttribute="top" secondItem="c4Z-Qn-kic" secondAttribute="bottom" id="EyD-WP-OET"/>
                             <constraint firstItem="oQA-cn-DHJ" firstAttribute="leading" secondItem="H9Y-0a-ka6" secondAttribute="leading" constant="10" id="O0T-wU-uhO"/>
+                            <constraint firstItem="c4Z-Qn-kic" firstAttribute="top" secondItem="H9Y-0a-ka6" secondAttribute="top" id="PcZ-Dr-9Lp"/>
                             <constraint firstItem="D6T-oa-UZ8" firstAttribute="top" secondItem="oQA-cn-DHJ" secondAttribute="bottom" constant="6" id="Ri3-XV-F8A"/>
                             <constraint firstItem="uNl-rG-cFC" firstAttribute="leading" secondItem="H9Y-0a-ka6" secondAttribute="leading" id="VKo-Dn-tL8"/>
                             <constraint firstAttribute="bottom" secondItem="eiI-fr-9P0" secondAttribute="bottom" id="d3a-LC-5ta"/>
+                            <constraint firstItem="c4Z-Qn-kic" firstAttribute="leading" secondItem="H9Y-0a-ka6" secondAttribute="leading" id="jtJ-Yj-gr4"/>
                             <constraint firstItem="uNl-rG-cFC" firstAttribute="top" secondItem="H9Y-0a-ka6" secondAttribute="top" id="nNG-rO-Ci2"/>
                             <constraint firstItem="eiI-fr-9P0" firstAttribute="leading" secondItem="H9Y-0a-ka6" secondAttribute="leading" id="oMn-Nj-FUl"/>
                             <constraint firstItem="oQA-cn-DHJ" firstAttribute="top" secondItem="H9Y-0a-ka6" secondAttribute="top" constant="10" id="qyB-RJ-6vu"/>
