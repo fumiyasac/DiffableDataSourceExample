@@ -67,7 +67,8 @@ final class PhotoViewModel: PhotoViewModelType, PhotoViewModelInputs, PhotoViewM
         // MEMO: 適用するAPIリクエスト用の処理
         self.api = api
 
-        // MEMO:
+        // MEMO: ページング処理を伴うAPIリクエスト
+        // → 実行時はViewController側でviewModel.inputs.fetchPhotoTrigger.send()で実行する
         fetchPhotoTrigger
             .sink(
                 receiveValue: { [weak self] in
@@ -82,7 +83,8 @@ final class PhotoViewModel: PhotoViewModelType, PhotoViewModelInputs, PhotoViewM
             )
             .store(in: &cancellables)
 
-        // MEMO:
+        // MEMO: 現在まで取得したデータのリフレッシュ処理を伴うAPIリクエスト
+        // → 実行時はViewController側でviewModel.inputs.refreshPhotoTrigger.send()で実行する
         refreshPhotoTrigger
             .sink(
                 receiveValue: { [weak self] in
