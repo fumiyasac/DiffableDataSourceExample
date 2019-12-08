@@ -12,6 +12,7 @@ const router = jsonServer.router('datasource/db.json');
 const middlewares = jsonServer.defaults();
 const rewrite_rules = jsonServer.rewriter({
     "/api/mock/v1/special/photos?page=:page" : "/get_photo_list?page=:page",
+    "/api/mock/v1/special/articles?page=:page" : "/get_article_list?page=:page",
 });
 
 // リクエストのルールを設定する

@@ -29,6 +29,7 @@ enum APIError: Error {
 
 protocol APIRequestManagerProtocol {
     func getPhotoList(perPage: Int) -> Future<[PhotoList], APIError>
+    func getArticleList(perPage: Int) -> Future<[ArticleList], APIError>
 }
 
 class APIRequestManager {
@@ -52,9 +53,6 @@ class APIRequestManager {
 
         case photos = "photos"
         case articles = "articles"
-        case detail = "detail"
-        case detailDescriptions = "detail_description"
-        case detailThumbnails = "detail_thumbnails"
 
         func getBaseUrl() -> String {
             return [host, version, path, self.rawValue].joined(separator: "/")
@@ -113,5 +111,11 @@ extension APIRequestManager: APIRequestManagerProtocol {
         let endPointUrl = EndPoint.photos.getBaseUrl() + "?page=" + String(perPage)
         let photoListAPIRequest = makeUrlForGetRequest(endPointUrl)
         return handleSessionTask(PhotoList.self, request: photoListAPIRequest)
+    }
+
+    func getArticleList(perPage: Int) -> Future<[ArticleList], APIError> {
+        let endPointUrl = EndPoint.articles.getBaseUrl() + "?page=" + String(perPage)
+        let articleListAPIRequest = makeUrlForGetRequest(endPointUrl)
+        return handleSessionTask(ArticleList.self, request: articleListAPIRequest)
     }
 }

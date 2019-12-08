@@ -46,7 +46,7 @@
                                     <constraint firstItem="hNe-Uk-puu" firstAttribute="leading" secondItem="eiI-fr-9P0" secondAttribute="leading" constant="10" id="UjA-YS-w4Z"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uNl-rG-cFC">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uNl-rG-cFC">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
                                 <color key="backgroundColor" red="0.12156862745098039" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>

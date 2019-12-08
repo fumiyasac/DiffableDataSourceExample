@@ -65,11 +65,11 @@ final class MainViewController: UIViewController {
         removeBackButtonText()
 
         // UICollectionViewに関する設定
-        setupCollectionView()
+        setupPhotoCollectionView()
         bindToViewModelOutputs()
     }
 
-    // MARK: - Private Function (for UICollectionView Setup)
+    // MARK: - Private Function
 
     // UICollectionViewにおけるPullToRefresh実行時の処理
     @objc private func executeRefresh() {
@@ -96,7 +96,7 @@ final class MainViewController: UIViewController {
     }
 
     // UICollectionViewに関する初期設定
-    private func setupCollectionView() {
+    private func setupPhotoCollectionView() {
         
         // MEMO: UICollectionViewで表示するセルの登録
         mainCollectionView.registerCustomCell(MainCollectionViewCell.self)

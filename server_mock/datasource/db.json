@@ -598,5 +598,130 @@
             ],
             "has_next_page": false
         }
+    ],
+    "get_article_list": [
+        {
+            "page": 1,
+            "articles": [
+                {
+                    "id": 1,
+                    "title": "(特集記事No.1)テスト特集記事タイトルのご紹介",
+                    "summary": "(写真No.1)この写真はサンプル開発のためのになります。実際の写真とタイトルとの関連性は特にない点にはご注意ください。",
+                    "date": "2019/12/09",
+                    "image_url": "https://development-image-samples.s3-ap-northeast-1.amazonaws.com/20191224/article/article1.jpg"
+                },
+                {
+                    "id": 2,
+                    "title": "(特集記事No.2)テスト特集記事タイトルのご紹介",
+                    "summary": "(写真No.2)この写真はサンプル開発のためのになります。実際の写真とタイトルとの関連性は特にない点にはご注意ください。",
+                    "date": "2019/12/09",
+                    "image_url": "https://development-image-samples.s3-ap-northeast-1.amazonaws.com/20191224/article/article2.jpg"
+                },
+                {
+                    "id": 3,
+                    "title": "(特集記事No.3)テスト特集記事タイトルのご紹介",
+                    "summary": "(写真No.3)この写真はサンプル開発のためのになります。実際の写真とタイトルとの関連性は特にない点にはご注意ください。",
+                    "date": "2019/12/09",
+                    "image_url": "https://development-image-samples.s3-ap-northeast-1.amazonaws.com/20191224/article/article3.jpg"
+                },
+                {
+                    "id": 4,
+                    "title": "(特集記事No.4)テスト特集記事タイトルのご紹介",
+                    "summary": "(写真No.4)この写真はサンプル開発のためのになります。実際の写真とタイトルとの関連性は特にない点にはご注意ください。",
+                    "date": "2019/12/09",
+                    "image_url": "https://development-image-samples.s3-ap-northeast-1.amazonaws.com/20191224/article/article4.jpg"
+                },
+                {
+                    "id": 5,
+                    "title": "(特集記事No.5)テスト特集記事タイトルのご紹介",
+                    "summary": "(写真No.5)この写真はサンプル開発のためのになります。実際の写真とタイトルとの関連性は特にない点にはご注意ください。",
+                    "date": "2019/12/09",
+                    "image_url": "https://development-image-samples.s3-ap-northeast-1.amazonaws.com/20191224/article/article5.jpg"
+                }
+            ],
+            "has_next_page": true
+        },
+        {
+            "page": 2,
+            "articles": [
+                {
+                    "id": 6,
+                    "title": "(特集記事No.6)テスト特集記事タイトルのご紹介",
+                    "summary": "(写真No.6)この写真はサンプル開発のためのになります。実際の写真とタイトルとの関連性は特にない点にはご注意ください。",
+                    "date": "2019/12/09",
+                    "image_url": "https://development-image-samples.s3-ap-northeast-1.amazonaws.com/20191224/article/article6.jpg"
+                },
+                {
+                    "id": 7,
+                    "title": "(特集記事No.7)テスト特集記事タイトルのご紹介",
+                    "summary": "(写真No.7)この写真はサンプル開発のためのになります。実際の写真とタイトルとの関連性は特にない点にはご注意ください。",
+                    "date": "2019/12/09",
+                    "image_url": "https://development-image-samples.s3-ap-northeast-1.amazonaws.com/20191224/article/article7.jpg"
+                },
+                {
+                    "id": 8,
+                    "title": "(特集記事No.8)テスト特集記事タイトルのご紹介",
+                    "summary": "(写真No.8)この写真はサンプル開発のためのになります。実際の写真とタイトルとの関連性は特にない点にはご注意ください。",
+                    "date": "2019/12/09",
+                    "image_url": "https://development-image-samples.s3-ap-northeast-1.amazonaws.com/20191224/article/article8.jpg"
+                },
+                {
+                    "id": 9,
+                    "title": "(特集記事No.9)テスト特集記事タイトルのご紹介",
+                    "summary": "(写真No.9)この写真はサンプル開発のためのになります。実際の写真とタイトルとの関連性は特にない点にはご注意ください。",
+                    "date": "2019/12/09",
+                    "image_url": "https://development-image-samples.s3-ap-northeast-1.amazonaws.com/20191224/article/article9.jpg"
+                },
+                {
+                    "id": 10,
+                    "title": "(特集記事No.10)テスト特集記事タイトルのご紹介",
+                    "summary": "(写真No.10)この写真はサンプル開発のためのになります。実際の写真とタイトルとの関連性は特にない点にはご注意ください。",
+                    "date": "2019/12/09",
+                    "image_url": "https://development-image-samples.s3-ap-northeast-1.amazonaws.com/20191224/article/article10.jpg"
+                }
+            ],
+            "has_next_page": true
+        },
+        {
+            "page": 3,
+            "articles": [
+                {
+                    "id": 11,
+                    "title": "(特集記事No.11)テスト特集記事タイトルのご紹介",
+                    "summary": "(写真No.11)この写真はサンプル開発のためのになります。実際の写真とタイトルとの関連性は特にない点にはご注意ください。",
+                    "date": "2019/12/09",
+                    "image_url": "https://development-image-samples.s3-ap-northeast-1.amazonaws.com/20191224/article/article11.jpg"
+                },
+                {
+                    "id": 12,
+                    "title": "(特集記事No.12)テスト特集記事タイトルのご紹介",
+                    "summary": "(写真No.12)この写真はサンプル開発のためのになります。実際の写真とタイトルとの関連性は特にない点にはご注意ください。",
+                    "date": "2019/12/09",
+                    "image_url": "https://development-image-samples.s3-ap-northeast-1.amazonaws.com/20191224/article/article12.jpg"
+                },
+                {
+                    "id": 13,
+                    "title": "(特集記事No.13)テスト特集記事タイトルのご紹介",
+                    "summary": "(写真No.13)この写真はサンプル開発のためのになります。実際の写真とタイトルとの関連性は特にない点にはご注意ください。",
+                    "date": "2019/12/09",
+                    "image_url": "https://development-image-samples.s3-ap-northeast-1.amazonaws.com/20191224/article/article13.jpg"
+                },
+                {
+                    "id": 14,
+                    "title": "(特集記事No.14)テスト特集記事タイトルのご紹介",
+                    "summary": "(写真No.14)この写真はサンプル開発のためのになります。実際の写真とタイトルとの関連性は特にない点にはご注意ください。",
+                    "date": "2019/12/09",
+                    "image_url": "https://development-image-samples.s3-ap-northeast-1.amazonaws.com/20191224/article/article14.jpg"
+                },
+                {
+                    "id": 15,
+                    "title": "(特集記事No.15)テスト特集記事タイトルのご紹介",
+                    "summary": "(写真No.15)この写真はサンプル開発のためのになります。実際の写真とタイトルとの関連性は特にない点にはご注意ください。",
+                    "date": "2019/12/09",
+                    "image_url": "https://development-image-samples.s3-ap-northeast-1.amazonaws.com/20191224/article/article15.jpg"
+                }
+            ],
+            "has_next_page": false
+        }
     ]
 }
