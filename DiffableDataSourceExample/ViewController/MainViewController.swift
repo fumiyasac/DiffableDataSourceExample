@@ -57,13 +57,6 @@ final class MainViewController: UIViewController {
 
     // MARK: - Override
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        // MEMO: ViewModelのInputsを経由したAPIでのデータ取得処理を実行する
-        viewModel.inputs.fetchPhotoTrigger.send()
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -133,6 +126,9 @@ final class MainViewController: UIViewController {
             snapshot.appendItems([], toSection: section)
         }
         dataSource.apply(snapshot, animatingDifferences: false)
+
+        // MEMO: ViewModelのInputsを経由したAPIでのデータ取得処理を実行する
+        viewModel.inputs.fetchPhotoTrigger.send()
     }
 
     // ViewModelのOutputとこのViewControllerでのUIに関する処理をバインドする
@@ -179,7 +175,40 @@ final class MainViewController: UIViewController {
     // UICollectionViewCompositionalLayoutを利用したレイアウトを組み立てる処理
     private func createWaterFallLayoutSection() -> NSCollectionLayoutSection {
 
-        // MEMO: Model内で持っているheightの値を適用することでWaterFallLayoutの様な見た目を実現する
+        if snapshot.numberOfItems == 0 {
+            return applyForNoItemLayoutSection()
+        } else {
+            return applyForWaterFallLayoutSection()
+        }
+    }
+
+    private func applyForNoItemLayoutSection() -> NSCollectionLayoutSection {
+
+        // MEMO: .absoluteや.estimatedを設定する場合で0を入れると下記のようなログが出ます。
+        // → Invalid estimated dimension, must be > 0. NOTE: This will be a hard-assert soon, please update your call site.
+
+        // 1. Itemのサイズ設定
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(0.5))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = .zero
+
+        // 2. Groupのサイズ設定
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(0.5))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+        group.contentInsets = .zero
+
+        // 3. Sectionのサイズ設定
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = .zero
+
+        return section
+    }
+
+    private func applyForWaterFallLayoutSection() -> NSCollectionLayoutSection {
+
+        // MEMO: 表示するアイテムが存在する場合は各セルの高さの適用とそれに基くUICollectionView全体の高さを計算する
+
+        // Model内で持っているheightの値を適用することでWaterFallLayoutの様な見た目を実現する
         var leadingGroupHeight: CGFloat = 0.0
         var trailingGroupHeight: CGFloat = 0.0
         var leadingGroupItems: [NSCollectionLayoutItem] = []
@@ -190,31 +219,6 @@ final class MainViewController: UIViewController {
         let columnHeight = CGFloat(totalHeight / 2.0)
 
         var runningHeight = CGFloat(0.0)
-
-        // MEMO: 表示するアイテムが0件の場合は仮のセクションを設定する
-        if snapshot.numberOfItems == 0 {
-
-            // MEMO: .absoluteや.estimatedを設定する場合で0を入れると下記のようなログが出ます。
-            // → Invalid estimated dimension, must be > 0. NOTE: This will be a hard-assert soon, please update your call site.
-
-            // 1. Itemのサイズ設定
-            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(0.5))
-            let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            item.contentInsets = .zero
-
-            // 2. Groupのサイズ設定
-            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(0.5))
-            let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
-            group.contentInsets = .zero
-
-            // 3. Sectionのサイズ設定
-            let section = NSCollectionLayoutSection(group: group)
-            section.contentInsets = .zero
-
-            return section
-        }
-
-        // MEMO: 表示するアイテムが存在する場合は各セルの高さの適用とそれに基くUICollectionView全体の高さを計算する
 
         // 1. Itemのサイズ設定
         for index in 0..<snapshot.numberOfItems {
