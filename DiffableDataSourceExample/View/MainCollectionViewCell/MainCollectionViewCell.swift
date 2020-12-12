@@ -34,7 +34,7 @@ final class MainCollectionViewCell: UICollectionViewCell {
 
         photoImageView.image = nil
         if let photoImageUrl = URL(string: photo.image.url) {
-            photoImageView.af_setImage(
+            photoImageView.af.setImage(
                 withURL: photoImageUrl,
                 placeholderImage: UIImage(named: "placeholder"),
                 imageTransition: .crossDissolve(0.36)

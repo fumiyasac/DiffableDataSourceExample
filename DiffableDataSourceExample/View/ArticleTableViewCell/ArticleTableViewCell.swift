@@ -35,7 +35,7 @@ final class ArticleTableViewCell: UITableViewCell {
 
         articleImageView.image = nil
         if let articleImageUrl = URL(string: article.imageUrl) {
-            articleImageView.af_setImage(withURL: articleImageUrl)
+            articleImageView.af.setImage(withURL: articleImageUrl)
         }
     }
 }
