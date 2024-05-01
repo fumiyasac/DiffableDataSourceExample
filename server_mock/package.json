@@ -15,7 +15,7 @@
   "author": "fumiyasac(Fumiya Sakai)",
   "license": "ISC",
   "devDependencies": {
-    "json-server": "^1.0.0-alpha.23",
+    "json-server": "^0.17.4",
     "json-schema": ">=0.4.0",
     "ansi-regex": ">=5.0.1",
     "nanoid": ">=3.1.31"
