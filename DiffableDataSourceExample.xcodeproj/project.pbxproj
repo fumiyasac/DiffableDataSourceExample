@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -173,7 +173,6 @@
 				DE623AAD238D6F3A0049BF21 /* SceneDelegate.swift */,
 				DE623AB4238D6F3D0049BF21 /* Assets.xcassets */,
 				DED6F1F5238D75A500A0168E /* APIRequestManager */,
-				DED6F1F6238D75BA00A0168E /* Enum */,
 				DED6F1F3238D757D00A0168E /* Extension */,
 				DED6F1F8238D78CA00A0168E /* LaunchScreen */,
 				DE46217023932A53006499F6 /* Model */,
@@ -285,13 +284,6 @@
 				DE695C7A238EC21E00A13CD4 /* APIRequestManager.swift */,
 			);
 			path = APIRequestManager;
-			sourceTree = "<group>";
-		};
-		DED6F1F6238D75BA00A0168E /* Enum */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Enum;
 			sourceTree = "<group>";
 		};
 		DED6F1F8238D78CA00A0168E /* LaunchScreen */ = {

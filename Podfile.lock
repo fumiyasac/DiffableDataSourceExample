@@ -1,7 +1,7 @@
 PODS:
-  - Alamofire (5.5.0)
-  - AlamofireImage (4.2.0):
-    - Alamofire (~> 5.4)
+  - Alamofire (5.9.1)
+  - AlamofireImage (4.3.0):
+    - Alamofire (~> 5.8)
   - PTCardTabBar (1.0.2)
 
 DEPENDENCIES:
@@ -15,10 +15,10 @@ SPEC REPOS:
     - PTCardTabBar
 
 SPEC CHECKSUMS:
-  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
-  AlamofireImage: 34a2d90b0e5fe6a5605f85ae4b7b01e784c60192
+  Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
+  AlamofireImage: 843953fa97bee5f561cf05d83abd759e590b068d
   PTCardTabBar: 9f94e31b447629aead75cd21cdaa6ae1f2c8bac6
 
 PODFILE CHECKSUM: 8274ba49091fa0d40358d13572cd1b41e1546bf2
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.15.2
